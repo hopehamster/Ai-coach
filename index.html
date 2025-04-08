@@ -2,43 +2,188 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ironflame AI Services</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ironflame AI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    body { font-family: sans-serif; margin: 2em; background: #f5f5f5; }
-    h1 { text-align: center; }
-    form {
-      max-width: 500px;
-      margin: 2em auto;
-      padding: 20px;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #0f0f10;
+      color: #fff;
+      line-height: 1.6;
     }
-    label { display: block; margin: 12px 0 4px; }
+    header {
+      background: linear-gradient(to right, #000000, #1f1f1f);
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .carousel {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 20px;
+      padding: 20px;
+      scroll-behavior: smooth;
+    }
+    .carousel::-webkit-scrollbar {
+      display: none;
+    }
+    .card {
+      flex: 0 0 90%;
+      scroll-snap-align: center;
+      background: #1a1a1d;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+    }
+    .card h2 {
+      font-size: 1.4em;
+      color: #00ffe0;
+    }
+    .card p {
+      font-size: 1em;
+      color: #ccc;
+      margin-top: 10px;
+    }
+    section {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .services {
+      background: #1a1a1d;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+    .services h2 {
+      text-align: center;
+      font-size: 2em;
+      margin-bottom: 30px;
+    }
+    .service-item {
+      background: #232326;
+      margin: 20px 0;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    .service-item h3 {
+      margin: 0 0 8px;
+      color: #00ffe0;
+    }
+    form {
+      background: #1a1a1d;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      margin-top: 60px;
+    }
+    form h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    label {
+      display: block;
+      margin: 16px 0 8px;
+      font-weight: 600;
+    }
     input, textarea, select {
       width: 100%;
-      padding: 8px;
+      padding: 12px;
+      border-radius: 6px;
+      border: none;
+      font-size: 1em;
       margin-bottom: 12px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
+      background: #2e2e33;
+      color: #fff;
     }
     button {
-      background: #000;
-      color: white;
+      background: #00ffe0;
+      color: #000;
+      padding: 14px 20px;
+      font-size: 1em;
       border: none;
-      padding: 10px 16px;
-      border-radius: 4px;
+      border-radius: 6px;
       cursor: pointer;
+      margin-top: 10px;
+      width: 100%;
+    }
+    button:hover {
+      background: #00ccb3;
+    }
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      color: #777;
+      background: #111;
+      margin-top: 60px;
     }
   </style>
 </head>
 <body>
-  <h1>Ironflame AI Services</h1>
-  <p style="text-align:center;">Helping you unlock AI tools for business, automation, and life.</p>
 
+<header>
+  <h1>Real AI for Real Life.</h1>
+  <p>Swipe or scroll to see how Ironflame AI meets you where you are.</p>
+</header>
+
+<section class="carousel">
+  <div class="card">
+    <h2>You don’t need more information. You need transformation.</h2>
+    <p>At Ironflame AI, we don’t teach tools—we unlock superpowers. For students, parents, business owners, employees—anyone ready to stop watching the AI wave and start riding it. This isn’t a tutorial. It’s your turning point.</p>
+  </div>
+  <div class="card">
+    <h2>AI is the life hack no one handed you.</h2>
+    <p>It’s the edge your teachers didn’t teach you. The time-saver your boss won’t mention. The tutor your kid deserves but you can’t afford. We build real strategies for real people—so you can get back your time, energy, and edge.</p>
+  </div>
+  <div class="card">
+    <h2>Everyone’s still asking, “What can AI do?”</h2>
+    <p>You’re here to ask: What can it do for me? Whether you're a college kid, side hustler, burned-out employee or busy parent, we design custom AI moves that make life lighter, smarter, faster. Stop surviving. Start automating.</p>
+  </div>
+  <div class="card">
+    <h2>Whoever you are, AI has something for you.</h2>
+    <p>A way to save time. A way to earn more. A way to breathe. At Ironflame, we turn AI into a tool that works for your life—not just your inbox. One plan, custom-built for who you are and where you’re going.</p>
+  </div>
+  <div class="card">
+    <h2>AI can’t replace you. But it can 10× you.</h2>
+    <p>It handles what drains you. Speeds up what stalls you. Amplifies what you’re already good at. We don’t give you AI. We give you the right AI, the right way—for your job, your goals, your life.</p>
+  </div>
+  <div class="card">
+    <h2>You’ve already done the hard part.</h2>
+    <p>Built the business. Held the job. Raised the kids. Now it’s time to let AI help you breathe again, scale smarter, and win back time you forgot was yours.</p>
+  </div>
+  <div class="card">
+    <h2>AI won’t just upgrade your workflow. It’ll upgrade your life.</h2>
+    <p>This is about reclaiming your peace, expanding your options, and unlocking the smarter, easier version of your life that’s already waiting. Let’s build your personal revolution.</p>
+  </div>
+</section>
+
+<section class="services">
+  <h2>Services We Offer</h2>
+  <div class="service-item">
+    <h3>AI Coaching & Tool Walkthroughs – $49</h3>
+    <p>Get one-on-one help learning how to use ChatGPT, Claude, Midjourney, and more.</p>
+  </div>
+  <div class="service-item">
+    <h3>Custom Automation Setup – $99+</h3>
+    <p>We'll help you build systems that save you time or money using AI workflows.</p>
+  </div>
+  <div class="service-item">
+    <h3>One-on-One Strategy Call – $29</h3>
+    <p>Ask anything and get expert advice on using AI to solve your unique challenges.</p>
+  </div>
+  <div class="service-item">
+    <h3>Business Integration – Custom Quote</h3>
+    <p>We'll tailor AI-powered solutions for your business, from marketing to backend ops.</p>
+  </div>
+</section>
+
+<section>
   <form action="https://formspree.io/f/meoapbvd" method="POST">
+    <h2>Tell Us What You Need</h2>
     <label>Your Name</label>
     <input type="text" name="name" required>
 
@@ -64,5 +209,11 @@
 
     <button type="submit">Send</button>
   </form>
+</section>
+
+<footer>
+  &copy; 2025 Ironflame AI. Built with intention and intelligence.
+</footer>
+
 </body>
 </html>
