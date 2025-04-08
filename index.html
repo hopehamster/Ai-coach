@@ -17,48 +17,101 @@
     }
     header {
       background: linear-gradient(to right, #000000, #1f1f1f);
-      padding: 60px 20px;
+      padding: 60px 20px 20px;
       text-align: center;
+      position: relative;
     }
-    header h1 {
+    .logo {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 40px;
+      height: 40px;
+    }
+    .flame {
+      width: 100%;
+      height: 100%;
+      animation: flicker 1s infinite alternate ease-in-out;
+    }
+    @keyframes flicker {
+      0% { transform: scale(1) rotate(0deg); opacity: 0.8; }
+      100% { transform: scale(1.05) rotate(2deg); opacity: 1; }
+    }
+    .flame path {
+      fill: url(#ironGradient);
+    }
+    .hero-wrapper {
+      height: 50px;
+      overflow: hidden;
+      display: inline-block;
+      position: relative;
+    }
+    .hero-text {
+      position: absolute;
+      white-space: nowrap;
+      animation: slideWords 30s infinite;
       font-size: 2.4em;
-      margin: 0 0 10px;
     }
-    header h2 span {
-      color: #00ffe0;
+    @keyframes slideWords {
+      0% { transform: translateX(100%); }
+      5% { transform: translateX(0); }
+      15% { transform: translateX(0); }
+      20% { transform: translateX(-100%); }
+      25% { transform: translateX(100%); }
+      30% { transform: translateX(0); }
+      40% { transform: translateX(0); }
+      45% { transform: translateX(-100%); }
+      50% { transform: translateX(100%); }
+      55% { transform: translateX(0); }
+      65% { transform: translateX(0); }
+      70% { transform: translateX(-100%); }
+      75% { transform: translateX(100%); }
+      80% { transform: translateX(0); }
+      90% { transform: translateX(0); }
+      95% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
     }
-    .fade-in {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .carousel, .services, form {
+    .carousel-container {
       max-width: 1000px;
       margin: 40px auto;
       padding: 0 20px;
     }
+    .carousel {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 20px;
+      padding: 20px;
+      scroll-behavior: smooth;
+    }
+    .carousel::-webkit-scrollbar {
+      display: none;
+    }
     .card {
+      flex: 0 0 90%;
+      scroll-snap-align: center;
       background: #1a1a1d;
       padding: 30px;
-      margin-bottom: 20px;
       border-radius: 12px;
       box-shadow: 0 0 20px rgba(0,0,0,0.4);
     }
     .card h2 {
       color: #00ffe0;
     }
-    .services {
+    section {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .services, form {
       background: #1a1a1d;
       padding: 40px;
       border-radius: 12px;
     }
-    .services h2 {
+    .services h2, form h2 {
       text-align: center;
       font-size: 2em;
+      margin-bottom: 20px;
     }
     .service-item {
       background: #232326;
@@ -69,15 +122,6 @@
     .service-item h3 {
       margin: 0 0 8px;
       color: #00ffe0;
-    }
-    form {
-      background: #1a1a1d;
-      padding: 40px;
-      border-radius: 12px;
-    }
-    form h2 {
-      text-align: center;
-      margin-bottom: 30px;
     }
     label {
       display: block;
@@ -119,38 +163,61 @@
 <body>
 
 <header>
-  <h1>Real AI for Real <span id="typed-role">People</span>.</h1>
-  <p>Custom strategies. Real results. For your life, your workflow, your future.</p>
+  <div class="logo">
+    <svg class="flame" viewBox="0 0 64 64">
+      <defs>
+        <linearGradient id="ironGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#c0c0c0"/>
+          <stop offset="100%" stop-color="#888"/>
+        </linearGradient>
+      </defs>
+      <path d="M32 2C20 18 44 24 32 42c-8 10-6 20 0 20s8-10 0-20c-12-18 12-24 0-40z"/>
+    </svg>
+  </div>
+  <div class="hero-wrapper">
+    <div class="hero-text">
+      Real AI for Business Owners →&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Real AI for Students →&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Real AI for Parents →&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Real AI for Employees →&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      Real AI for You →
+    </div>
+  </div>
 </header>
 
-<section class="carousel fade-in">
-  <div class="card">
-    <h2>You don’t need more information. You need transformation.</h2>
-    <p>At Ironflame AI, we don’t teach tools—we unlock superpowers. This isn’t a tutorial. It’s your turning point.</p>
-  </div>
-  <div class="card">
-    <h2>AI is the life hack no one handed you.</h2>
-    <p>The edge your teachers didn’t teach you. The time-saver your boss won’t mention. We build strategies for real people—so you can get back your time, energy, and edge.</p>
+<section class="carousel-container">
+  <div class="carousel">
+    <div class="card"><h2>You don’t need more information. You need transformation.</h2><p>We don’t teach tools—we unlock superpowers. This isn’t a tutorial. It’s your turning point.</p></div>
+    <div class="card"><h2>AI is the life hack no one handed you.</h2><p>The edge your teachers didn’t teach you. The time-saver your boss won’t mention. The tutor your kid deserves but you can’t afford. We build real strategies for real people.</p></div>
+    <div class="card"><h2>What can AI do for you?</h2><p>From side hustlers to full-time founders, we design smarter, faster workflows with AI.</p></div>
+    <div class="card"><h2>Whoever you are, AI has something for you.</h2><p>A way to save time. A way to earn more. A way to breathe. One plan, custom-built for who you are and where you’re going.</p></div>
+    <div class="card"><h2>AI can’t replace you. But it can 10× you.</h2><p>It handles what drains you. Speeds up what stalls you. Amplifies what you’re already good at.</p></div>
+    <div class="card"><h2>You’ve already done the hard part.</h2><p>Built the business. Held the job. Raised the kids. Now let AI help you scale smarter, rest easier, and win back time you forgot was yours.</p></div>
+    <div class="card"><h2>AI won’t just upgrade your workflow. It’ll upgrade your life.</h2><p>This is about reclaiming your peace, expanding your options, and unlocking the smarter, easier version of your life that’s already waiting.</p></div>
   </div>
 </section>
 
-<section class="services fade-in">
+<section class="services">
   <h2>Services We Offer</h2>
   <div class="service-item">
     <h3>AI Coaching & Tool Walkthroughs – $49</h3>
-    <p>Get one-on-one help learning how to use ChatGPT, Claude, Midjourney, and more.</p>
+    <p>One-on-one help with ChatGPT, Claude, Midjourney, and more.</p>
   </div>
   <div class="service-item">
     <h3>Custom Automation Setup – $99+</h3>
-    <p>We'll help you build systems that save you time or money using AI workflows.</p>
+    <p>We build systems that save you time or money using AI workflows.</p>
   </div>
   <div class="service-item">
     <h3>One-on-One Strategy Call – $29</h3>
     <p>Ask anything and get expert advice on using AI to solve your unique challenges.</p>
   </div>
+  <div class="service-item">
+    <h3>Business Integration – Custom Quote</h3>
+    <p>Tailored AI-powered solutions for your business, from marketing to backend ops.</p>
+  </div>
 </section>
 
-<section class="fade-in">
+<section>
   <form action="https://formspree.io/f/meoapbvd" method="POST">
     <h2>Tell Us What You Need</h2>
     <label>Your Name</label>
@@ -177,30 +244,6 @@
 <footer>
   &copy; 2025 Ironflame AI. Built with intention and intelligence.
 </footer>
-
-<script>
-  // Typewriter effect
-  const roles = ["Business Owners", "Students", "Parents", "Employees", "You"];
-  let i = 0;
-  setInterval(() => {
-    document.getElementById("typed-role").textContent = roles[i];
-    i = (i + 1) % roles.length;
-  }, 2000);
-
-  // Fade-in on scroll
-  const faders = document.querySelectorAll('.fade-in');
-  const options = {
-    threshold: 0.2
-  };
-  const observer = new IntersectionObserver(function(entries, observer) {
-    entries.forEach(entry => {
-      if(entry.isIntersecting){
-        entry.target.classList.add('visible');
-      }
-    });
-  }, options);
-  faders.forEach(fader => observer.observe(fader));
-</script>
 
 </body>
 </html>
